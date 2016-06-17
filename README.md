@@ -56,7 +56,7 @@ PHP code MUST use only UTF-8 without BOM.
 
 PHP code files MUST use the Unix LF (linefeed) line ending.
 
-There MUST NOT be trailing whitespace at the end of non-blank lines.
+There MUST NOT be trailing whitespace at the end of lines.
 
 #### 2.4. Indentation
 
@@ -279,6 +279,8 @@ The PHP constants `true`, `false`, and `null` MUST be in lower case.
 
 All other constants MUST be declared in all upper case with underscore separators.
 
+
+
 #### 5.2. Control Structures
 
 This standard is intentionally flexible regarding the formatting of control
@@ -296,9 +298,28 @@ keywords look like single words.
 
 The `case` statement MUST be indented once from `switch`, and the `break`
 keyword (or other terminating keyword) MUST be indented at the same level as the
-`case` body. There MUST be a comment such as // no break when fall-through is
+`case` body. There MUST be a comment such as `// no break` when fall-through is
 intentional in a non-empty case body.
 
 Whatever other formatting convention is used SHOULD be applied consistently
 within a reasonable scope. That scope may be vendor-level, package-level,
 class-level, or method-level.
+
+#### 5.3. General
+
+Super-globals MUST NOT be accessed directly.
+
+The following keywords and functions MUST NOT be used: `goto`, `die`, `eval`,
+`exit`, `global`.
+
+The error control operator `@` SHOULD NOT be used.
+
+Comma delimiters SHOULD be followed by a single space.
+
+Binary operators (==, &&, ...) SHOULD be surrounded by a single space, with the
+exception of the concatenation (.) operator.
+
+For type-hinting in PHPDocs and casting the following SHOULD be used:
+* `bool` (instead of `boolean` or `Boolean`)
+* `int` (instead of `integer`)
+* `float` (instead of `double` or `real`)
