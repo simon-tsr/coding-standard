@@ -279,8 +279,6 @@ The PHP constants `true`, `false`, and `null` MUST be in lower case.
 
 All other constants MUST be declared in all upper case with underscore separators.
 
-
-
 #### 5.2. Control Structures
 
 This standard is intentionally flexible regarding the formatting of control
@@ -309,15 +307,18 @@ class-level, or method-level.
 
 Super-globals MUST NOT be accessed directly.
 
-The following keywords and functions MUST NOT be used: `goto`, `die`, `eval`,
-`exit`, `global`.
+The following keywords and functions MUST NOT be used: `goto`, `die`, `eval`, `global`.
+
+The `exit` keyword MUST only be used in the context of CLI scripts.
 
 The error control operator `@` SHOULD NOT be used.
 
 Comma delimiters SHOULD be followed by a single space.
 
-Binary operators (==, &&, ...) SHOULD be surrounded by a single space, with the
-exception of the concatenation (.) operator.
+Operators (arithmetic, assignment, bitwise, comparison, logical) SHOULD be surrounded
+by a single space.
+
+Short-array syntax `[]` SHOULD be used instead of `array()`.
 
 For type-hinting in PHPDocs and casting the following SHOULD be used:
 * `bool` (instead of `boolean` or `Boolean`)
